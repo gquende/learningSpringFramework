@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://thymeleaf.org"
+
+
+
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Pessoas cadastradas</title>
+</head>
+<body>
+
+<a href="/cadastrarPessoa">Cadastrar Pessoa</a>
+<div th: each="pessoa:${pessoas}">
+    <div class="row">
+        <p><span th:text="${pessoa.nome}"></span></p>
+        <p><span th:text="${pessoa.sobrenome}"></span></p>
+        <p><span th:text="${pessoa.bairro}"></span></p>
+    </div>
+
+</div>
+
+
+</body>
+</html>
