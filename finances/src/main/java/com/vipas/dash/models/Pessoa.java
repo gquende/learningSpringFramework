@@ -18,6 +18,15 @@ public class Pessoa {
     private String nome;
     private String sobrenome;
     private String morada;
+    private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public int getIdPessoa() {
         return idPessoa;
