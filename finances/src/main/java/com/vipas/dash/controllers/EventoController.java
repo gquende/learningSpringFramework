@@ -5,6 +5,7 @@ import com.vipas.dash.models.Evento;
 import com.vipas.dash.repository.EventoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,9 +35,24 @@ public class EventoController {
         Iterable<Evento> eventos=er.findAll();
         mv.addObject("eventos",eventos);
         return mv;
+    }
+
+
+
+    @RequestMapping("/{codigo}")//Retorna o coigo a partir da URL quando clicado
+    public ModelAndView detalhesEvento(@PathVariable("codigo")/*Define que o parametro sera mapeado como variavel de retorna na URL*/ long codigo){
+
+        ModelAndView modelAndView= new ModelAndView("evento/detalhesEvento");
+        Evento evento= er.findByCodigo(codigo);
+        modelAndView.addObject("evento",evento);
+
+        return modelAndView;
+
 
 
 
     }
+
+
 
 }

@@ -11,24 +11,22 @@ public class Evento implements Serializable {
     private static final int serialVersionUID=1;
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
-private int codigo;
-
-
-
+private long codigo;
+    private String nome;
+    private String local;
+    private String data;
+    private String horario;
 
     public long getCodigo() {
 
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(long codigo) {
         this.codigo = codigo;
     }
 
-    private String nome;
-    private String local;
-    private String data;
-    private String horario;
+
 
     public String getNome() {
         return nome;

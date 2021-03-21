@@ -2,10 +2,12 @@
 <html lang="en"
       xmlns:th="http://thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+
+
 >
 <head>
     <meta charset="UTF-8">
-    <title>Finance Family</title>
+    <title>Evento Test</title>
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
@@ -19,9 +21,8 @@
 </head>
 
 <body>
+
 <h1 class="adolfo">Lista de Eventos</h1>
-
-
 <table class="container">
     <thead>
     <tr>
@@ -33,8 +34,11 @@
     </thead>
 
 <tbody>
+
+<!-- ModelView Retornado a partir do controlador-->
     <tr th:each="evento : ${eventos}">
-            <td><span th:text="${evento.nome}"></span></td>
+            <!-- Para buscar o dados a partir do controlador-->
+            <td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0,evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
             <td><span th:text="${evento.local}"></span></td>
             <td><span th:text="${evento.data}"></span></td>
             <td><span th:text="${evento.horario}"></span></td>

@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en"
-
       xmlns:th="http://thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-
-
-
 >
+
+
+
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar Pessoa</title>
-    <!--Import Google Icon Font-->
+    <title>Detalhes do evento</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <!--Import materialize.css-->
     <link  rel="stylesheet" th:href = "@{/materialize/css/materialize.min.css}"  media="screen,projection"/>
@@ -19,32 +17,31 @@
     <link rel="stylesheet" th:href="@{/estilo.css}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+
+
 </head>
 <body>
 
-
-
+<h2>Evento</h2>
 
 <div class="container">
 
-    <h3>Cadastrar Pessoa</h3>
+    <div class="row">
+        <!-- Recebe dados a partir do controlador com uma iteracao-->
+        <div th:each="evento : ${evento}">
+        <p>Nome: <span th:text="${evento.nome}"> </span></p>
+            <p>Local: <span th:text="${evento.local}"> </span></p>
+            <p>Data: <span th:text="${evento.data}"> </span></p>
+            <p>Hora: <span th:text="${evento.horario}"> </span></p>
+        </div>
+    </div>
 
-    <form method="post" >
-        <p>Nome: </p>
-        <input type="text" value="" name="nome"/>
-        <p>Sobrenome: </p>
-        <input type="text" value="" name="sobrenome"/>
-        <p>Bairro: </p>
-        <input type="text" value="" name="morada"/>
-        <p>Phone: </p>
-        <input type="text" value="" name="phone"/>
-        <br>
-        <br>
-<button class="btn waves-light waves-effect" type="submit">Salvar</button>
+ <a href="/eventos"><button class="btn waves-effect waves-light"> Lista de Eventos</button></a>
 
-    </form>
 
 </div>
+
+
 
 
 </body>
