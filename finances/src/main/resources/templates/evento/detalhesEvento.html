@@ -35,6 +35,18 @@
             <p>Hora: <span th:text="${evento.horario}"> </span></p>
         </div>
     </div>
+    <br>
+
+    <h3>Adicionar convidados</h3>
+    <form method="post">
+        Nome:<input type="text" value="" name="nomeConvidado"/>
+        <br>
+        RG:<input type="text" value="" name="rg"/>
+
+        <button type="submit" class="btn waves-light waves-effect">Adicionar</button>
+    </form>
+
+    <br>
 
  <a href="/eventos"><button class="btn waves-effect waves-light"> Lista de Eventos</button></a>
 

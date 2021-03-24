@@ -1,10 +1,8 @@
 package com.vipas.dash.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Evento implements Serializable {
@@ -17,8 +15,18 @@ private long codigo;
     private String data;
     private String horario;
 
-    public long getCodigo() {
 
+    @OneToMany
+    private List<Convidado> convidados;
+    public List<Convidado> getConvidados() {
+        return convidados;
+    }
+
+    public void setConvidados(List<Convidado> convidados) {
+        this.convidados = convidados;
+    }
+
+    public long getCodigo() {
         return codigo;
     }
 
